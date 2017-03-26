@@ -17,366 +17,402 @@
 			</div>
 		</div>
 	</header>
-	<div class="wrapper"><div class="container">
-		<div>
-			<p style="font-size:1.2em;">常规赛技术统计 | <strong style="color:rgb(235,3,75);">Chris Paul</strong></p>
+	<div class="wrapper">
+		<div class="container">
+			<p><b>Donsort.js</b> is a JavaScript plugin for dom structure to be sorted by its own rules. <b>Donsort</b> helps you to sort table's column by desc or asc order. The only work is to add "#id" on some special tags, such as <code>&lt;table&gt;</code>, <code>&lt;tbody&gt;</code>, the prepared <code>&lt;td&gt;</code>. When the binding work finished, users can click the binded  <code>&lt;td&gt;</code>. Then, the column of clicked tags would sorted by asc order, and another click would have the desc order result.</p>
+			<p>Download the latest version <span id="version"> (1.0.0)</span> here:</p>
+			<ul>
+				<li><a id="download" href="https://github.com/NathanJiang/Donsort/archive/master.zip">Donsort.zip</a></li>
+			</ul>
+			<p>To link directly to the latest release, copy this snippet:</p>
+			<pre><code><span>&lt;script src="http://www.jiangyu.me/web/Donsort/js/Donsort.js"&gt;&lt;/script</span>&gt;</span></code></pre>
+			<p>The <a href="https://github.com/NathanJiang/Donsort">full source and tests</a> are also available <a href="https://github.com/NathanJiang/Donsort/">for download</a> on GitHub. 
+			</p>
+			<h2><a name="introduction" href="#introduction">#</a> Introduction</h2>
+			<p><b>Donsort</b> allows you to bind sort function with Dom by rule of "table - [thead,tbody]", and then click the binded <code>&lt;td&gt;</code> Tag, the data below it would sort automatically. For example, a table has a column called "score", when you click <code>&lt;td&gt;score&lt;/td&gt;</code>, the score column would be sorted.</p>
+			<p>The odd click event would get asc order result, the even click event would get desc order.</p>
+			<h2><a name="usage" href="#usage">#</a> Usage</h2>
+			<p>For example, to bind the sort function in Chris Paul's scores in career.</p>
+			<p>The result is as follows, you can click the "green" tag to sort the column:</p>
+			<pre><code><span>// HTML Part</span>
+<span>...</span>
+<span>&lt;td id="score1"&gt;得分&lt;/td&gt;</span>
+<span></span>
+<span>// JavaScript part</span>
+<span>Donsort.config({</span>
+    <span>tableID: 'table1',</span>
+    <span>tbodyID: 'tbody1', </span>
+    <span>sortedID: 'score1'</span>
+<span>}).listen('table');</span></code></pre>
+			<div>
+				<p>常规赛技术统计 | <strong style="color:rgb(235,3,75);">Chris Paul</strong></p>
+			</div>
+			<table class="table table-bordered" border="0" cellspacing="0" cellpadding="0" id="table1">
+				<thead>
+					<tr class="info">
+						<td>赛季</td><td>球队</td>
+						<td>出场</td><td>首发</td>
+						<td>时间</td><td>投篮</td>
+						<td>三分</td><td>罚球</td>
+						<td>前篮板</td><td>后篮板</td>
+						<td>总篮板</td><td>助攻</td>
+						<td>抢断</td><td>盖帽</td>
+						<td>失误</td><td>犯规</td>
+						<td id="score1">得分</td>
+					</tr>
+				</thead>
+				<tbody id="tbody1">
+					<tr><td>16-17</td><td>快船</td>		<td>52</td><td>52</td>
+						<td>31.2</td>
+						<td>47%</td>
+						<td>41.4%</td>
+						<td>87.7%</td>
+						<td>0.7</td><td>4.4</td>
+						<td>5</td>
+						<td>9.2</td><td>2</td>
+						<td>0.1</td><td>2.4</td>
+						<td>2.5</td>
+						<td>17.5</td></tr>
+				 	<tr><td>15-16</td><td>快船</td>		<td>74</td><td>74</td>
+						<td>32.7</td>
+						<td>46.2%</td>
+						<td>37.1%</td>
+						<td>89.6%</td>
+						<td>0.5</td><td>3.7</td>
+						<td>4.2</td>
+						<td>10</td><td>2.1</td>
+						<td>0.2</td><td>2.6</td>
+						<td>2.5</td>
+						<td>19.5</td></tr>
+				 	<tr><td>14-15</td><td>快船</td>		<td>82</td><td>82</td>
+						<td>34.8</td>
+						<td>48.5%</td>
+						<td>39.8%</td>
+						<td>90%</td>
+						<td>0.6</td><td>4</td>
+						<td>4.6</td>
+						<td>10.2</td><td>1.9</td>
+						<td>0.2</td><td>2.3</td>
+						<td>2.5</td>
+						<td>19.1</td></tr>
+				 	<tr><td>13-14</td><td>快船</td>		<td>62</td><td>62</td>
+						<td>35</td>
+						<td>46.7%</td>
+						<td>36.8%</td>
+						<td>85.5%</td>
+						<td>0.6</td><td>3.7</td>
+						<td>4.3</td>
+						<td>10.7</td><td>2.5</td>
+						<td>0.1</td><td>2.3</td>
+						<td>2.5</td>
+						<td>19.1</td></tr>
+				 	<tr><td>12-13</td><td>快船</td>		<td>70</td><td>70</td>
+						<td>33.4</td>
+						<td>48.1%</td>
+						<td>32.8%</td>
+						<td>88.5%</td>
+						<td>0.8</td><td>3</td>
+						<td>3.7</td>
+						<td>9.7</td><td>2.4</td>
+						<td>0.1</td><td>2.3</td>
+						<td>2</td>
+						<td>16.9</td></tr>
+				 	<tr><td>11-12</td><td>快船</td>		<td>60</td><td>60</td>
+						<td>36.4</td>
+						<td>47.8%</td>
+						<td>37.1%</td>
+						<td>86.1%</td>
+						<td>0.7</td><td>2.9</td>
+						<td>3.6</td>
+						<td>9.1</td><td>2.5</td>
+						<td>0.1</td><td>2.1</td>
+						<td>2.3</td>
+						<td>19.8</td></tr>
+				 	<tr><td>10-11</td><td>黄蜂</td>		<td>80</td><td>80</td>
+						<td>36</td>
+						<td>46.3%</td>
+						<td>38.8%</td>
+						<td>87.8%</td>
+						<td>0.5</td><td>3.6</td>
+						<td>4.1</td>
+						<td>9.8</td><td>2.4</td>
+						<td>0.1</td><td>2.2</td>
+						<td>2.5</td>
+						<td>15.9</td></tr>
+				 	<tr><td>09-10</td><td>黄蜂</td>		<td>45</td><td>45</td>
+						<td>38</td>
+						<td>49.3%</td>
+						<td>40.9%</td>
+						<td>84.7%</td>
+						<td>0.4</td><td>3.8</td>
+						<td>4.2</td>
+						<td>10.7</td><td>2.1</td>
+						<td>0.2</td><td>2.5</td>
+						<td>2.6</td>
+						<td>18.7</td></tr>
+				 	<tr><td>08-09</td><td>黄蜂</td>		<td>78</td><td>78</td>
+						<td>38.5</td>
+						<td>50.3%</td>
+						<td>36.4%</td>
+						<td>86.8%</td>
+						<td>0.9</td><td>4.7</td>
+						<td>5.5</td>
+						<td>11</td><td>2.8</td>
+						<td>0.1</td><td>3</td>
+						<td>2.7</td>
+						<td>22.8</td></tr>
+				 	<tr><td>07-08</td><td>黄蜂</td>		<td>80</td><td>80</td>
+						<td>37.6</td>
+						<td>48.8%</td>
+						<td>36.9%</td>
+						<td>85.1%</td>
+						<td>0.8</td><td>3.2</td>
+						<td>4</td>
+						<td>11.6</td><td>2.7</td>
+						<td>0.1</td><td>2.5</td>
+						<td>2.3</td>
+						<td>21.1</td></tr>
+				 	<tr><td>06-07</td><td>黄蜂</td>		<td>64</td><td>64</td>
+						<td>36.8</td>
+						<td>43.7%</td>
+						<td>35%</td>
+						<td>81.8%</td>
+						<td>0.8</td><td>3.5</td>
+						<td>4.4</td>
+						<td>8.9</td><td>1.8</td>
+						<td>0</td><td>2.5</td>
+						<td>2.4</td>
+						<td>17.3</td></tr>
+				 	<tr><td>05-06</td><td>黄蜂</td>		<td>78</td><td>78</td>
+						<td>36</td>
+						<td>43%</td>
+						<td>28.2%</td>
+						<td>84.7%</td>
+						<td>0.8</td><td>4.3</td>
+						<td>5.1</td>
+						<td>7.8</td><td>2.2</td>
+						<td>0.1</td><td>2.3</td>
+						<td>2.8</td>
+						<td>16.1</td></tr>
+			 	</tbody>
+			</table>
+			<p>Donsort also supported the rule without special td id but set <code>sortedID="all"</code>. </p>Under these circumstances, table would bind event with all <code>&lt;td&gt;</code> in the <code>&lt;thead&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/thead&gt;</code>.</p>
+			<p>The example is as follows:</p>
+			<pre><code><span>// JavaScript part</span>
+<span>Donsort.config({</span>
+    <span>tableID: 'table1',</span>
+    <span>tbodyID: 'tbody1', </span>
+    <span>sortedID: 'all'</span>    
+<span>}).listen('table');</span></code></pre>
+			<div>
+				<p style="padding-top: 20px;">常规赛技术统计 | <strong><span style="color:rgb(235,3,75);">Los Angeles</span> <span style="color:rgb(10,106,179);">Clippers</span></strong></p>
+			</div>
+			<table class="table table-bordered" border="0" cellspacing="0" cellpadding="0" id="table2">
+				<thead>
+					<tr>
+						<td>球员</td><td>出场</td><td>首发</td><td>时间</td><td>投篮</td><td>三分</td><td>罚球</td><td>前篮板</td><td>后篮板</td><td>总篮板</td><td id="assist">助攻</td><td>抢断</td><td>盖帽</td><td>失误</td><td>犯规</td><td id="score2" class="score2">得分</td>
+					</tr>
+				</thead>
+				<tbody id="tbody2">
+					<tr>
+					<td>
+					布雷克-格里芬</td>
+					<td>52</td><td>52</td>
+					<td>33.8</td>
+					<td>48.2%</td>
+					<td>32.9%</td>
+					<td>74.7%</td>
+					<td>2</td><td>6.3</td>
+					<td>8.3</td>
+					<td>5</td><td>0.9</td>
+					<td>0.4</td><td>2.4</td>
+					<td>2.5</td>
+					<td>21.3</td></tr>
+					<tr>	<td>
+					J.J.-雷迪克</td>
+					<td>70</td><td>70</td>
+					<td>27.9</td>
+					<td>44.3%</td>
+					<td>41.7%</td>
+					<td>88.6%</td>
+					<td>0.2</td><td>2</td>
+					<td>2.2</td>
+					<td>1.4</td><td>0.7</td>
+					<td>0.1</td><td>1.3</td>
+					<td>1.6</td>
+					<td>14.8</td></tr>
+					<tr>	<td>
+					克里斯-保罗</td>
+					<td>52</td><td>52</td>
+					<td>31.2</td>
+					<td>47%</td>
+					<td>41.4%</td>
+					<td>87.7%</td>
+					<td>0.7</td><td>4.4</td>
+					<td>5</td>
+					<td>9.2</td><td>2</td>
+					<td>0.1</td><td>2.4</td>
+					<td>2.5</td>
+					<td>17.5</td></tr>
+					<tr>	<td>
+					德安德烈-乔丹</td>
+					<td>72</td><td>72</td>
+					<td>31.6</td>
+					<td>70.7%</td>
+					<td>0%</td>
+					<td>49.1%</td>
+					<td>3.6</td><td>10</td>
+					<td>13.6</td>
+					<td>1.2</td><td>0.6</td>
+					<td>1.7</td><td>1.5</td>
+					<td>2.6</td>
+					<td>12.5</td></tr>
+					<tr>	<td>
+					 贾马尔-克劳福德</a></td>
+					<td>73</td><td>1</td>
+					<td>26.4</td>
+					<td>41.1%</td>
+					<td>36%</td>
+					<td>85.2%</td>
+					<td>0.2</td><td>1.4</td>
+					<td>1.7</td>
+					<td>2.7</td><td>0.8</td>
+					<td>0.2</td><td>1.8</td>
+					<td>1.5</td>
+					<td>12.2</td></tr>
+					<tr>	<td>
+					 奥斯汀-里弗斯</a></td>
+					<td>71</td><td>28</td>
+					<td>27.9</td>
+					<td>44.5%</td>
+					<td>37.7%</td>
+					<td>68.9%</td>
+					<td>0.3</td><td>1.9</td>
+					<td>2.1</td>
+					<td>2.8</td><td>0.7</td>
+					<td>0.1</td><td>1.6</td>
+					<td>2.6</td>
+					<td>12.2</td></tr>
+					<tr>	<td>
+					马利斯-斯贝茨</td>
+					<td>73</td><td>2</td>
+					<td>15.8</td>
+					<td>44.8%</td>
+					<td>38%</td>
+					<td>87.4%</td>
+					<td>1.1</td><td>3.5</td>
+					<td>4.5</td>
+					<td>0.8</td><td>0.3</td>
+					<td>0.5</td><td>0.8</td>
+					<td>2.7</td>
+					<td>9.1</td></tr>
+					<tr>	<td>
+					 雷蒙德-费尔顿</a></td>
+					<td>71</td><td>11</td>
+					<td>21.7</td>
+					<td>43.3%</td>
+					<td>33.8%</td>
+					<td>77.4%</td>
+					<td>0.5</td><td>2.4</td>
+					<td>2.8</td>
+					<td>2.5</td><td>0.9</td>
+					<td>0.3</td><td>1.1</td>
+					<td>1.6</td>
+					<td>7</td></tr>
+					<tr>	<td>卢克-巴莫特</a></td>
+					<td>71</td><td>67</td>
+					<td>21.7</td>
+					<td>49.4%</td>
+					<td>37.5%</td>
+					<td>71.8%</td>
+					<td>0.6</td><td>1.6</td>
+					<td>2.2</td>
+					<td>0.5</td><td>1</td>
+					<td>0.4</td><td>0.6</td>
+					<td>1.6</td>
+					<td>5.8</td></tr>
+					<tr>	<td>
+					 布兰顿-巴斯</a></td>
+					<td>47</td><td>0</td>
+					<td>11.4</td>
+					<td>57.7%</td>
+					<td>33.3%</td>
+					<td>86.1%</td>
+					<td>0.8</td><td>1.7</td>
+					<td>2.5</td>
+					<td>0.4</td><td>0.3</td>
+					<td>0.2</td><td>0.6</td>
+					<td>0.9</td>
+					<td>5.6</td></tr>
+					<tr>	<td>
+					 韦斯利-约翰逊</a></td>
+					<td>64</td><td>3</td>
+					<td>12.1</td>
+					<td>37%</td>
+					<td>25.7%</td>
+					<td>64.7%</td>
+					<td>0.4</td><td>2.3</td>
+					<td>2.7</td>
+					<td>0.3</td><td>0.5</td>
+					<td>0.4</td><td>0.3</td>
+					<td>1.3</td>
+					<td>2.8</td></tr>
+					<tr>	<td>
+					 阿兰-安德森</a></td>
+					<td>26</td><td>0</td>
+					<td>11.2</td>
+					<td>38.2%</td>
+					<td>31.7%</td>
+					<td>75%</td>
+					<td>0.1</td><td>0.8</td>
+					<td>0.9</td>
+					<td>0.4</td><td>0.1</td>
+					<td>0</td><td>0.3</td>
+					<td>1.1</td>
+					<td>3.2</td></tr>
+					<tr>	<td>
+					 保罗-皮尔斯</a></td>
+					<td>18</td><td>7</td>
+					<td>11.8</td>
+					<td>39.6%</td>
+					<td>35.3%</td>
+					<td>80%</td>
+					<td>0.1</td><td>1.8</td>
+					<td>1.8</td>
+					<td>0.4</td><td>0.2</td>
+					<td>0.3</td><td>0.7</td>
+					<td>1.7</td>
+					<td>3.4</td></tr>
+					<tr>	<td>
+					 戴蒙得-斯通</a></td>
+					<td>7</td><td>0</td>
+					<td>3.4</td>
+					<td>23.1%</td>
+					<td>0%</td>
+					<td>100%</td>
+					<td>0.1</td><td>0.7</td>
+					<td>0.9</td>
+					<td>0</td><td>0</td>
+					<td>0.1</td><td>0.3</td>
+					<td>0.7</td>
+					<td>1.4</td></tr>
+					<tr>	<td>
+					 布莱斯-约翰逊</a></td>
+					<td>2</td><td>0</td>
+					<td>3.5</td>
+					<td>25%</td>
+					<td>0%</td>
+					<td>0%</td>
+					<td>0.5</td><td>1</td>
+					<td>1.5</td>
+					<td>0.5</td><td>0.5</td>
+					<td>0.5</td><td>0.5</td>
+					<td>0</td>
+					<td>1</td></tr>
+				</tbody>
+			</table>
 		</div>
-		<table class="table table-bordered" border="0" cellspacing="0" cellpadding="0" id="table1">
-			<thead>
-				<tr class="info">
-					<td>赛季</td><td>球队</td>
-					<td>出场</td><td>首发</td>
-					<td>时间</td><td>投篮</td>
-					<td>三分</td><td>罚球</td>
-					<td>前篮板</td><td>后篮板</td>
-					<td>总篮板</td><td>助攻</td>
-					<td>抢断</td><td>盖帽</td>
-					<td>失误</td><td>犯规</td>
-					<td id="score1">得分</td>
-				</tr>
-			</thead>
-			<tbody id="tbody1">
-			<tr><td>16-17</td><td>快船</td>		<td>52</td><td>52</td>
-				<td>31.2</td>
-				<td>47%</td>
-				<td>41.4%</td>
-				<td>87.7%</td>
-				<td>0.7</td><td>4.4</td>
-				<td>5</td>
-				<td>9.2</td><td>2</td>
-				<td>0.1</td><td>2.4</td>
-				<td>2.5</td>
-				<td>17.5</td></tr>
-		 	<tr><td>15-16</td><td>快船</td>		<td>74</td><td>74</td>
-				<td>32.7</td>
-				<td>46.2%</td>
-				<td>37.1%</td>
-				<td>89.6%</td>
-				<td>0.5</td><td>3.7</td>
-				<td>4.2</td>
-				<td>10</td><td>2.1</td>
-				<td>0.2</td><td>2.6</td>
-				<td>2.5</td>
-				<td>19.5</td></tr>
-		 	<tr><td>14-15</td><td>快船</td>		<td>82</td><td>82</td>
-				<td>34.8</td>
-				<td>48.5%</td>
-				<td>39.8%</td>
-				<td>90%</td>
-				<td>0.6</td><td>4</td>
-				<td>4.6</td>
-				<td>10.2</td><td>1.9</td>
-				<td>0.2</td><td>2.3</td>
-				<td>2.5</td>
-				<td>19.1</td></tr>
-		 	<tr><td>13-14</td><td>快船</td>		<td>62</td><td>62</td>
-				<td>35</td>
-				<td>46.7%</td>
-				<td>36.8%</td>
-				<td>85.5%</td>
-				<td>0.6</td><td>3.7</td>
-				<td>4.3</td>
-				<td>10.7</td><td>2.5</td>
-				<td>0.1</td><td>2.3</td>
-				<td>2.5</td>
-				<td>19.1</td></tr>
-		 	<tr><td>12-13</td><td>快船</td>		<td>70</td><td>70</td>
-				<td>33.4</td>
-				<td>48.1%</td>
-				<td>32.8%</td>
-				<td>88.5%</td>
-				<td>0.8</td><td>3</td>
-				<td>3.7</td>
-				<td>9.7</td><td>2.4</td>
-				<td>0.1</td><td>2.3</td>
-				<td>2</td>
-				<td>16.9</td></tr>
-		 	<tr><td>11-12</td><td>快船</td>		<td>60</td><td>60</td>
-				<td>36.4</td>
-				<td>47.8%</td>
-				<td>37.1%</td>
-				<td>86.1%</td>
-				<td>0.7</td><td>2.9</td>
-				<td>3.6</td>
-				<td>9.1</td><td>2.5</td>
-				<td>0.1</td><td>2.1</td>
-				<td>2.3</td>
-				<td>19.8</td></tr>
-		 	<tr><td>10-11</td><td>黄蜂</td>		<td>80</td><td>80</td>
-				<td>36</td>
-				<td>46.3%</td>
-				<td>38.8%</td>
-				<td>87.8%</td>
-				<td>0.5</td><td>3.6</td>
-				<td>4.1</td>
-				<td>9.8</td><td>2.4</td>
-				<td>0.1</td><td>2.2</td>
-				<td>2.5</td>
-				<td>15.9</td></tr>
-		 	<tr><td>09-10</td><td>黄蜂</td>		<td>45</td><td>45</td>
-				<td>38</td>
-				<td>49.3%</td>
-				<td>40.9%</td>
-				<td>84.7%</td>
-				<td>0.4</td><td>3.8</td>
-				<td>4.2</td>
-				<td>10.7</td><td>2.1</td>
-				<td>0.2</td><td>2.5</td>
-				<td>2.6</td>
-				<td>18.7</td></tr>
-		 	<tr><td>08-09</td><td>黄蜂</td>		<td>78</td><td>78</td>
-				<td>38.5</td>
-				<td>50.3%</td>
-				<td>36.4%</td>
-				<td>86.8%</td>
-				<td>0.9</td><td>4.7</td>
-				<td>5.5</td>
-				<td>11</td><td>2.8</td>
-				<td>0.1</td><td>3</td>
-				<td>2.7</td>
-				<td>22.8</td></tr>
-		 	<tr><td>07-08</td><td>黄蜂</td>		<td>80</td><td>80</td>
-				<td>37.6</td>
-				<td>48.8%</td>
-				<td>36.9%</td>
-				<td>85.1%</td>
-				<td>0.8</td><td>3.2</td>
-				<td>4</td>
-				<td>11.6</td><td>2.7</td>
-				<td>0.1</td><td>2.5</td>
-				<td>2.3</td>
-				<td>21.1</td></tr>
-		 	<tr><td>06-07</td><td>黄蜂</td>		<td>64</td><td>64</td>
-				<td>36.8</td>
-				<td>43.7%</td>
-				<td>35%</td>
-				<td>81.8%</td>
-				<td>0.8</td><td>3.5</td>
-				<td>4.4</td>
-				<td>8.9</td><td>1.8</td>
-				<td>0</td><td>2.5</td>
-				<td>2.4</td>
-				<td>17.3</td></tr>
-		 	<tr><td>05-06</td><td>黄蜂</td>		<td>78</td><td>78</td>
-				<td>36</td>
-				<td>43%</td>
-				<td>28.2%</td>
-				<td>84.7%</td>
-				<td>0.8</td><td>4.3</td>
-				<td>5.1</td>
-				<td>7.8</td><td>2.2</td>
-				<td>0.1</td><td>2.3</td>
-				<td>2.8</td>
-				<td>16.1</td></tr>
-		 		</tbody>
-		 </table>
-
-				<div>
-					<p style="font-size:1.2em;padding-top: 20px;">常规赛技术统计 | <strong><span style="color:rgb(235,3,75);">Los Angeles</span> <span style="color:rgb(10,106,179);">Clippers</span></strong></p>
-				</div>
-					<table class="table table-bordered" border="0" cellspacing="0" cellpadding="0" id="table2">
-			<thead>
-				<tr class="info"><td>球员</td><td>出场</td><td>首发</td><td>时间</td><td>投篮</td><td>三分</td><td>罚球</td><td>前篮板</td><td>后篮板</td><td>总篮板</td><td id="assist">助攻</td><td>抢断</td><td>盖帽</td><td>失误</td><td>犯规</td><td id="score2" class="score2">得分</td></tr>
-			</thead>
-			
-			<tbody id="tbody2">
-			<tr>
-			<td>
-			布雷克-格里芬</td>
-			<td>52</td><td>52</td>
-			<td>33.8</td>
-			<td>48.2%</td>
-			<td>32.9%</td>
-			<td>74.7%</td>
-			<td>2</td><td>6.3</td>
-			<td>8.3</td>
-			<td>5</td><td>0.9</td>
-			<td>0.4</td><td>2.4</td>
-			<td>2.5</td>
-			<td>21.3</td></tr>
-			<tr>	<td>
-			J.J.-雷迪克</td>
-			<td>70</td><td>70</td>
-			<td>27.9</td>
-			<td>44.3%</td>
-			<td>41.7%</td>
-			<td>88.6%</td>
-			<td>0.2</td><td>2</td>
-			<td>2.2</td>
-			<td>1.4</td><td>0.7</td>
-			<td>0.1</td><td>1.3</td>
-			<td>1.6</td>
-			<td>14.8</td></tr>
-			<tr>	<td>
-			克里斯-保罗</td>
-			<td>52</td><td>52</td>
-			<td>31.2</td>
-			<td>47%</td>
-			<td>41.4%</td>
-			<td>87.7%</td>
-			<td>0.7</td><td>4.4</td>
-			<td>5</td>
-			<td>9.2</td><td>2</td>
-			<td>0.1</td><td>2.4</td>
-			<td>2.5</td>
-			<td>17.5</td></tr>
-			<tr>	<td>
-			德安德烈-乔丹</td>
-			<td>72</td><td>72</td>
-			<td>31.6</td>
-			<td>70.7%</td>
-			<td>0%</td>
-			<td>49.1%</td>
-			<td>3.6</td><td>10</td>
-			<td>13.6</td>
-			<td>1.2</td><td>0.6</td>
-			<td>1.7</td><td>1.5</td>
-			<td>2.6</td>
-			<td>12.5</td></tr>
-			<tr>	<td>
-			 贾马尔-克劳福德</a></td>
-			<td>73</td><td>1</td>
-			<td>26.4</td>
-			<td>41.1%</td>
-			<td>36%</td>
-			<td>85.2%</td>
-			<td>0.2</td><td>1.4</td>
-			<td>1.7</td>
-			<td>2.7</td><td>0.8</td>
-			<td>0.2</td><td>1.8</td>
-			<td>1.5</td>
-			<td>12.2</td></tr>
-			<tr>	<td>
-			 奥斯汀-里弗斯</a></td>
-			<td>71</td><td>28</td>
-			<td>27.9</td>
-			<td>44.5%</td>
-			<td>37.7%</td>
-			<td>68.9%</td>
-			<td>0.3</td><td>1.9</td>
-			<td>2.1</td>
-			<td>2.8</td><td>0.7</td>
-			<td>0.1</td><td>1.6</td>
-			<td>2.6</td>
-			<td>12.2</td></tr>
-			<tr>	<td>
-			马利斯-斯贝茨</td>
-			<td>73</td><td>2</td>
-			<td>15.8</td>
-			<td>44.8%</td>
-			<td>38%</td>
-			<td>87.4%</td>
-			<td>1.1</td><td>3.5</td>
-			<td>4.5</td>
-			<td>0.8</td><td>0.3</td>
-			<td>0.5</td><td>0.8</td>
-			<td>2.7</td>
-			<td>9.1</td></tr>
-			<tr>	<td>
-			 雷蒙德-费尔顿</a></td>
-			<td>71</td><td>11</td>
-			<td>21.7</td>
-			<td>43.3%</td>
-			<td>33.8%</td>
-			<td>77.4%</td>
-			<td>0.5</td><td>2.4</td>
-			<td>2.8</td>
-			<td>2.5</td><td>0.9</td>
-			<td>0.3</td><td>1.1</td>
-			<td>1.6</td>
-			<td>7</td></tr>
-			<tr>	<td>卢克-巴莫特</a></td>
-			<td>71</td><td>67</td>
-			<td>21.7</td>
-			<td>49.4%</td>
-			<td>37.5%</td>
-			<td>71.8%</td>
-			<td>0.6</td><td>1.6</td>
-			<td>2.2</td>
-			<td>0.5</td><td>1</td>
-			<td>0.4</td><td>0.6</td>
-			<td>1.6</td>
-			<td>5.8</td></tr>
-			<tr>	<td>
-			 布兰顿-巴斯</a></td>
-			<td>47</td><td>0</td>
-			<td>11.4</td>
-			<td>57.7%</td>
-			<td>33.3%</td>
-			<td>86.1%</td>
-			<td>0.8</td><td>1.7</td>
-			<td>2.5</td>
-			<td>0.4</td><td>0.3</td>
-			<td>0.2</td><td>0.6</td>
-			<td>0.9</td>
-			<td>5.6</td></tr>
-			<tr>	<td>
-			 韦斯利-约翰逊</a></td>
-			<td>64</td><td>3</td>
-			<td>12.1</td>
-			<td>37%</td>
-			<td>25.7%</td>
-			<td>64.7%</td>
-			<td>0.4</td><td>2.3</td>
-			<td>2.7</td>
-			<td>0.3</td><td>0.5</td>
-			<td>0.4</td><td>0.3</td>
-			<td>1.3</td>
-			<td>2.8</td></tr>
-			<tr>	<td>
-			 阿兰-安德森</a></td>
-			<td>26</td><td>0</td>
-			<td>11.2</td>
-			<td>38.2%</td>
-			<td>31.7%</td>
-			<td>75%</td>
-			<td>0.1</td><td>0.8</td>
-			<td>0.9</td>
-			<td>0.4</td><td>0.1</td>
-			<td>0</td><td>0.3</td>
-			<td>1.1</td>
-			<td>3.2</td></tr>
-			<tr>	<td>
-			 保罗-皮尔斯</a></td>
-			<td>18</td><td>7</td>
-			<td>11.8</td>
-			<td>39.6%</td>
-			<td>35.3%</td>
-			<td>80%</td>
-			<td>0.1</td><td>1.8</td>
-			<td>1.8</td>
-			<td>0.4</td><td>0.2</td>
-			<td>0.3</td><td>0.7</td>
-			<td>1.7</td>
-			<td>3.4</td></tr>
-			<tr>	<td>
-			 戴蒙得-斯通</a></td>
-			<td>7</td><td>0</td>
-			<td>3.4</td>
-			<td>23.1%</td>
-			<td>0%</td>
-			<td>100%</td>
-			<td>0.1</td><td>0.7</td>
-			<td>0.9</td>
-			<td>0</td><td>0</td>
-			<td>0.1</td><td>0.3</td>
-			<td>0.7</td>
-			<td>1.4</td></tr>
-			<tr>	<td>
-			 布莱斯-约翰逊</a></td>
-			<td>2</td><td>0</td>
-			<td>3.5</td>
-			<td>25%</td>
-			<td>0%</td>
-			<td>0%</td>
-			<td>0.5</td><td>1</td>
-			<td>1.5</td>
-			<td>0.5</td><td>0.5</td>
-			<td>0.5</td><td>0.5</td>
-			<td>0</td>
-			<td>1</td></tr>
-			</tbody></table>
-	</div></div>
+	</div>
 	<hr style="margin: 120px 0px 0px;">
 	<footer>
 		<div id="footer">© <a href="http://jiangyu.me" rel="nofollow" style="color:#6E7173">Nathan</a> </div>

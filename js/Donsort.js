@@ -1,3 +1,4 @@
+// http://jiangyu.me/web/Donsort/ Version 1.0.0. Copyright 2017 Nathan Jiang.
 (function () {
 	var options = {
 		tableID: '',

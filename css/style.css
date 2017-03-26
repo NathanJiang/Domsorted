@@ -85,3 +85,8 @@ footer #footer{
 .jumbotron.fixed p{
 	display: none;
 }
+
+h2 a{
+	color: #ccc !important;
+	text-decoration: none;
+}

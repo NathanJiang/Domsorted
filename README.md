@@ -1,2 +1,2 @@
-# Domsorted
-The JavaScript plugin for dom tree to sorted.
+# Donsort
+The JavaScript plugin for dom structure to sorted.

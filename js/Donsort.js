@@ -29,6 +29,8 @@
 	};
 
 	function coreTable(tag, tableID, tbodyID, sortedID) {
+		var domSortedId = document.getElementById(sortedID);
+		addClass(domSortedId, "Donsort");
 		document.getElementById(sortedID).addEventListener('click',function(){
 			var arr = [],
 				sortedIdIndex = keyNumber(document.getElementById(sortedID).parentNode, sortedID)
@@ -57,7 +59,7 @@
 			var tds = document.querySelectorAll("#" + tableID + " thead tr td");
 			var count = 0;
 			tds.forEach(function(e){
-				var tmpIdName = "Domsorted_" + tableID + "_" + String(++count);
+				var tmpIdName = "Donsort_" + tableID + "_" + String(++count);
 				e.setAttribute("id", tmpIdName);
 				coreTable(tag, tableID, tbodyID, tmpIdName)
 			})
@@ -68,6 +70,9 @@
 	}
 
 	var api = {
+		init: function(){
+			return this;
+		},
 		config: function (opts) {
 			if(!opts) return options;
 			for(var key in opts) {
@@ -97,5 +102,5 @@
 			return this;
 		}
 	}
-	this.Domsorted = api;
+	this.Donsort = api;
 })();

@@ -29,7 +29,7 @@ For example, to bind the sort function in Chris Paul's scores in career.
 
 The result is as follows, you can click the "green" tag to sort the column:
 
-{% codeblock JavaScript Donsort exmaple https://github.com/NathanJiang/Donsort/archive/master.zip Download %}
+```JavaScript
 // HTML Part
 ...
 <td id="score1">得分</td>
@@ -40,7 +40,7 @@ Donsort.config({
     tbodyID: 'tbody1', 
     sortedID: 'score1'
 }).listen('table');
-{% endcodeblock %}
+```
 
 ![img](http://www.jiangyu.me/img/0326/1.png)
 
@@ -49,12 +49,12 @@ Donsort also supported the rule without special td id but set sortedID="all".
 Under these circumstances, table would bind event with all <td> in the <thead><tr></tr></thead>.
 The example is as follows:
 
-{% codeblock JavaScript Donsort exmaple https://github.com/NathanJiang/Donsort/archive/master.zip Download %}
+```JavaScript
 Donsort.config({
     tableID: 'table1',
     tbodyID: 'tbody1', 
     sortedID: 'all'    
 }).listen('table');
-{% endcodeblock %}
+```
 
 ![img](http://www.jiangyu.me/img/0326/2.png)

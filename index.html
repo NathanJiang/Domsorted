@@ -423,10 +423,10 @@
 <script>	
 window.onscroll=function(){
 	var scrollTop =document.documentElement.scrollTop||document.body.scrollTop;
-	if(scrollTop> 235){
-		addClass(document.getElementById("jumbotron"),"fixed")
+	if(scrollTop> 235 || window.innerWidth < 700 ){
+		document.getElementById("jumbotron").classList.add("fixed")
 	} else {
-		removeClass(document.getElementById("jumbotron"),"fixed")
+		document.getElementById("jumbotron").classList.remove("fixed")
 	}
 }
 window.onload=function(){ 

@@ -1,7 +1,7 @@
 # Donsort
 The JavaScript plugin for dom structure to sorted.
 
-**Donsort.js** is a JavaScript plugin for dom structure to be sorted by its own rules. Donsort helps you to sort table's column by desc or asc order. The only work is to add "#id" on some special tags, such as `<table>`, `<tbody>`, the prepared `<td>`. When the binding work finished, users can click the binded `<td>`. Then, the column of clicked tags would sorted by asc order, and another click would have the desc order result.
+**Donsort.js** is a JavaScript plugin for dom structure to be sorted by its own rules. Donsort.js helps you to sort table's column by desc or asc order. The only work is to add "#id" on some special tags, such as `<table>`, `<tbody>`, the prepared `<td>`. When the binding work finished, users can click the binded `<td>`. Then, the column of clicked tags would sorted by asc order, and another click would have the desc order result.
 
 [Demo](http://www.jiangyu.me/web/Donsort)｜[中文文档](https://github.com/NathanJiang/Donsort/)
 

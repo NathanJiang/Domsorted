@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+Function.prototype.method = function(name, func){
+	this.prototype[name] = func;
+	return this;
+}
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('get', 'http://127.0.0.1/Js Example/demo.js', false);
+xhr.send(null);
+console.log(xhr.status)
+
+</script>
